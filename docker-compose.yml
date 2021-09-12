@@ -1,0 +1,17 @@
+version: '3'
+services:
+    app1:
+        container_name: app1
+        image: raghadalarfaj/app1
+        ports: 
+          - 8888:8080
+    app2:
+        container_name: app2
+        build: ./Java-testapp-2
+        ports:
+          - 9999:8080
+    haproxy_img:
+        container_name: haproxy
+        image: raghadalarfaj/reverseproxy:v2
+        ports:
+         - 80:80
